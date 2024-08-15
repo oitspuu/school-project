@@ -1,0 +1,65 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model BLL.DTO.UserCourse
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Resources.BLL.Common.Details</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Resources.Domain.Course.CourseName
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Resources.Domain.UserCourse.HomeworkTime
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HomeworkTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Resources.Domain.Course.ECTS
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ECTS)
+        </dd>
+        @if (Model.Teacher != null)
+        {
+            <dt class = "col-sm-2">
+                @Resources.Domain.Course.Teacher
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Teacher)
+            </dd>
+        }
+        @if (Model.SchoolName != null)
+        {
+        <dt class = "col-sm-2">
+            @Resources.Domain.Course.School
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SchoolName)
+        </dd>
+        }
+        <dt class = "col-sm-2">
+            @Resources.Domain.Course.StartDate
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Resources.Domain.Course.EndDate
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">@Resources.BLL.Common.Edit</a> |
+    <a asp-action="Index">@Resources.BLL.Common.BackToList</a>
+</div>

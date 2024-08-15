@@ -1,0 +1,27 @@
+using AutoMapper;
+using Base.Interfaces;
+
+namespace BLL;
+
+public class DalBllMapper<TLeftObject, TRightObject> : IDalMapper<TLeftObject, TRightObject> 
+    where TLeftObject : class 
+    where TRightObject : class
+
+{
+    private readonly IMapper _mapper;
+
+    public DalBllMapper(IMapper mapper)
+    {
+        _mapper = mapper;
+    }
+    
+    public TLeftObject? Map(TRightObject? inObject)
+    {
+        return _mapper.Map<TLeftObject>(inObject);
+    }
+
+    public TRightObject? Map(TLeftObject? inObject)
+    {
+        return _mapper.Map<TRightObject>(inObject);
+    }
+}

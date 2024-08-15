@@ -1,0 +1,48 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model BLL.DTO.UserWork
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>@Resources.BLL.Common.Create</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WorkName" class="control-label"></label>
+                <input asp-for="WorkName" class="form-control" />
+                <span asp-validation-for="WorkName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Start" class="control-label"></label>
+                <input asp-for="Start" class="form-control" />
+                <span asp-validation-for="Start" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="End" class="control-label"></label>
+                <input asp-for="End" class="form-control" />
+                <span asp-validation-for="End" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LunchBreakDuration" class="control-label"></label>
+                <input asp-for="LunchBreakDuration" class="form-control" />
+                <span asp-validation-for="LunchBreakDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@Resources.BLL.Common.Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@Resources.BLL.Common.BackToList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

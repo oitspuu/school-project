@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AngleSharp.Io" Version="1.0.0" />
+        <PackageReference Include="coverlet.collector" Version="6.0.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.6" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+        <PackageReference Include="NSubstitute" Version="5.1.0" />
+        <PackageReference Include="xunit" Version="2.8.1" />
+        <PackageReference Include="xunit.assert" Version="2.8.1" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.1">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Xunit"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Base\Base.csproj" />
+      <ProjectReference Include="..\BLL\BLL.csproj" />
+      <ProjectReference Include="..\DAL.EF\DAL.EF.csproj" />
+      <ProjectReference Include="..\WebApp\WebApp.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="AutoMapper">
+        <HintPath>..\..\..\..\.nuget\packages\automapper\13.0.1\lib\net6.0\AutoMapper.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
+        <HintPath>..\..\..\..\.nuget\packages\microsoft.aspnetcore.identity.entityframeworkcore\8.0.5\lib\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.Identity.Stores">
+        <HintPath>..\..\..\..\.nuget\packages\microsoft.extensions.identity.stores\8.0.5\lib\net8.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

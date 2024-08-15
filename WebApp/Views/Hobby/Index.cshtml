@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<BLL.DTO.UserHobby>
+
+@{
+    ViewData["Title"] = "Hobby Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Resources.BLL.Common.Hobbies</h1>
+</div>
+
+<p>
+    <a asp-action="Create">@Resources.BLL.Common.CreateNew</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Resources.Domain.Hobby.HobbyName
+        </th>
+        <th>@Resources.Domain.UserHobby.TimeSpent
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HobbyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeSpent)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@Resources.BLL.Common.Edit</a> |
+                <a asp-action="Add" asp-route-id="@item.Id">@Resources.BLL.Common.AddTime</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@Resources.BLL.Common.Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

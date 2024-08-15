@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<BLL.DTO.UserCourse>
+
+@{
+    ViewData["Title"] = "Courses Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Resources.BLL.Common.Courses</h1>
+</div>
+
+<p>
+    <a asp-action="Create">@Resources.BLL.Common.CreateNew</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Resources.Domain.Course.CourseName
+        </th>
+        <th>
+            @Resources.Domain.UserCourse.HomeworkTime
+        </th>
+        <th>
+            @Resources.Domain.Course.StartDate
+        </th>
+        <th>
+            @Resources.Domain.Course.EndDate
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeworkTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@Resources.BLL.Common.Edit</a> |
+                <a asp-action="Add" asp-route-id="@item.Id">@Resources.BLL.Common.AddTime</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">@Resources.BLL.Common.Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@Resources.BLL.Common.Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

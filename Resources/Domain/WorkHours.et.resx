@@ -1,0 +1,29 @@
+<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="UserWork" xml:space="preserve">
+        <value>Töökoht</value>
+    </data>
+    <data name="StartTime" xml:space="preserve">
+        <value>Algusaeg</value>
+    </data>
+    <data name="LunchBreak" xml:space="preserve">
+        <value>Lõunapaus</value>
+    </data>
+    <data name="EndTime" xml:space="preserve">
+        <value>Lõpuaeg</value>
+    </data>
+    <data name="Date" xml:space="preserve">
+        <value>Kuupäev</value>
+    </data>
+</root>

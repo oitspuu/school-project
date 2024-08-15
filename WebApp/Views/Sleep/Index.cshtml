@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<BLL.DTO.SleepDuration>
+
+@{
+    ViewData["Title"] = "Sleep Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Resources.BLL.Common.Sleep</h1>
+</div>
+
+<p>
+    <a asp-action="Create">@Resources.BLL.Common.CreateNew</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Resources.Domain.SleepDuration.Day
+        </th>
+        <th>
+            @Resources.Domain.SleepDuration.Start
+        </th>
+        <th>
+            @Resources.Domain.SleepDuration.End
+        </th>
+        <th>
+            @Resources.BLL.Common.Total
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.End)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">@Resources.BLL.Common.Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">@Resources.BLL.Common.Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

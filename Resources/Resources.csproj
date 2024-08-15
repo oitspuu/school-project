@@ -1,0 +1,114 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Domain\Course.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Course.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Domain\Hobby.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Hobby.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Domain\School.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>School.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Domain\SleepDuration.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>SleepDuration.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Domain\UserCourse.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserCourse.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Domain\UserHobby.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserHobby.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Domain\UserWork.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>UserWork.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Domain\Work.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Work.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Domain\WorkHours.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>WorkHours.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL\SleepDuration.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>SleepDuration.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="BLL\Common.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Common.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Domain\Course.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Course.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Domain\Hobby.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Hobby.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Domain\School.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>School.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Domain\SleepDuration.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SleepDuration.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Domain\UserCourse.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserCourse.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Domain\UserHobby.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserHobby.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Domain\UserWork.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>UserWork.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Domain\Work.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Work.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Domain\WorkHours.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>WorkHours.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL\SleepDuration.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SleepDuration.resx</DependentUpon>
+      </Compile>
+      <Compile Update="BLL\Common.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Common.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>

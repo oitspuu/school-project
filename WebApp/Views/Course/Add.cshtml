@@ -1,0 +1,35 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model DTO.v1_0.UserCourseAddTime
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>@Resources.BLL.Common.AddTime</h1>
+
+<h4>@Resources.BLL.Common.Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TimeSpent" class="control-label"></label>
+                <input asp-for="TimeSpent" class="form-control" />
+                <span asp-validation-for="TimeSpent" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="@Resources.BLL.Common.Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@Resources.BLL.Common.BackToList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

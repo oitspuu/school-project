@@ -1,0 +1,80 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model BLL.DTO.UserWork
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Resources.BLL.Common.Details</h1>
+
+<div class="row">
+    <div class="col">
+        <dl>
+            <dt class = "col-sm-2">
+                @Resources.Domain.UserWork.Work
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.WorkName)
+            </dd>
+            <dt class = "col-sm-2">
+                @Resources.Domain.UserWork.Start
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Start)
+            </dd>
+            <dt class = "col-sm-2">
+                @Resources.Domain.UserWork.End
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.End)
+            </dd>
+            <dt class = "col-sm-2">
+                @Resources.Domain.Work.LunchBreakDuration
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.LunchBreakDuration)
+            </dd>
+            <dt class = "col-sm-2">
+                @Resources.BLL.Common.TotalWorkHours
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.TotalWorkHours)
+            </dd>
+        </dl>
+    </div>
+    <div class="col">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>@Resources.Domain.WorkHours.Date</th>
+                <th>@Resources.Domain.WorkHours.StartTime</th>
+                <th>@Resources.Domain.WorkHours.EndTime</th>
+                <th>@Resources.BLL.Common.Duration</th>
+                <th>@Resources.Domain.WorkHours.LunchBreak</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @if (Model.WorkHours != null)
+            {
+                foreach (var workHour in Model.WorkHours)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => workHour.Date)</td>
+                        <td>@Html.DisplayFor(modelItem => workHour.StartTime)</td>
+                        <td>@Html.DisplayFor(modelItem => workHour.EndTime)</td>
+                        <td>@Html.DisplayFor(modelItem => workHour.Duration)</td>
+                        <td>@Html.DisplayFor(modelItem => workHour.LunchBreak)</td>
+                        <td><a asp-action="DeleteDay" asp-route-id="@workHour.Id">Delete</a></td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">@Resources.BLL.Common.Edit</a> |
+    <a asp-action="Index">@Resources.BLL.Common.BackToList</a>
+</div>
+

@@ -1,0 +1,70 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model BLL.DTO.UserCourse
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>@Resources.BLL.Common.Edit</h1>
+
+<h4>@Resources.BLL.Common.Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseName" class="control-label"></label>
+                <input asp-for="CourseName" class="form-control" />
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeworkTime" class="control-label"></label>
+                <input asp-for="HomeworkTime" class="form-control" />
+                <span asp-validation-for="HomeworkTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SchoolName" class="control-label"></label>
+                <input asp-for="SchoolName" class="form-control" />
+                <span asp-validation-for="SchoolName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Teacher" class="control-label"></label>
+                <input asp-for="Teacher" class="form-control" />
+                <span asp-validation-for="Teacher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ECTS" class="control-label"></label>
+                <input asp-for="ECTS" class="form-control" />
+                <span asp-validation-for="ECTS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CourseId" />
+            <input type="hidden" asp-for="SchoolId" />
+            <input type="hidden" asp-for="Language" />
+            <input type="hidden" asp-for="OriginalCourseTextId" />
+            <input type="hidden" asp-for="OriginalSchoolTextId" />
+            <div class="form-group">
+                <input type="submit" value="@Resources.BLL.Common.Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@Resources.BLL.Common.BackToList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

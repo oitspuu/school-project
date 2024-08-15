@@ -1,0 +1,46 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model BLL.DTO.UserWork
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>@Resources.BLL.Common.Delete</h1>
+
+<h3>@Resources.BLL.Common.ConfirmDelete</h3>
+<div>
+    <hr />
+    <dl class="row">
+
+        <dt class = "col-sm-2">
+            @Resources.Domain.Work.WorkName
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Resources.Domain.UserWork.Start
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Start)
+        </dd>
+        <dt class = "col-sm-2">
+            @Resources.Domain.UserWork.End
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.End)
+        </dd>
+        <dt class = "col-sm-2">
+            @Resources.BLL.Common.TotalWorkHours
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalWorkHours)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="@Resources.BLL.Common.Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">@Resources.BLL.Common.BackToList</a>
+    </form>
+</div>
